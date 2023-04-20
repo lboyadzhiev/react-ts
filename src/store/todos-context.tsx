@@ -6,12 +6,14 @@ type TodosContextType = {
   items: Todo[];
   addTodo: (text: string) => void;
   removeTodo: (id: string) => void;
+  changeTodo: (list: Todo[]) => void;
 };
 
 export const Todoscontext = React.createContext<TodosContextType>({
   items: [],
   addTodo: () => {},
   removeTodo: (id: string) => {},
+  changeTodo: () => {},
 });
 
 const TodosContextProvider: React.FC = (props) => {
@@ -25,16 +27,21 @@ const TodosContextProvider: React.FC = (props) => {
     });
   };
 
+  const changeTodoHandler = (list: Todo[]) => {
+    setTodos(list);
+  };
+
   const deleteTodoHandler = (todoId: string) => {
     setTodos((prevTodos) => {
       return prevTodos.filter((todo) => todo.id !== todoId);
     });
   };
-
+  
   const contextValue: TodosContextType = {
     items: todos,
     addTodo: addTodoHandler,
     removeTodo: deleteTodoHandler,
+    changeTodo: changeTodoHandler,
   };
   return (
     <Todoscontext.Provider value={contextValue}>
