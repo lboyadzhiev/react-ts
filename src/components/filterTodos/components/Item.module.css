@@ -1,0 +1,9 @@
+.item label {
+  margin-left: 2rem;
+}
+
+.input {
+  width: 5rem;
+  height: 1rem;
+  padding: 4rem;
+}

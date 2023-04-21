@@ -1,0 +1,16 @@
+.container {
+  width: 40%;
+
+  margin: 0 auto;
+}
+
+.dropdown {
+  border: 1px solid gray;
+  background-color: white;
+  border-radius: 12px;
+  width: 40%;
+  min-height: 40%;
+  margin-top: 1rem;
+  position: absolute;
+  min-width: 5rem;
+}

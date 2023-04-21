@@ -9,6 +9,7 @@ import TodosContextProvider from './store/todos-context';
 // components
 import Todos from './components/Todos';
 import NewTodo from './components/NewTodo';
+import FilterTodo from './components/filterTodos/FilterTodo';
 import Button from './components/multiselect/components/Button';
 import Multiselect from './components/multiselect/Multiselect';
 
@@ -17,7 +18,8 @@ function App() {
   return (
     <TodosContextProvider>
       <NewTodo />
-      <div>
+      <FilterTodo />
+      {/* <div>
         <button
           className={classes.button}
           onClick={() => setIsOpen((prevStata) => !prevStata)}
@@ -25,7 +27,7 @@ function App() {
           -- Select Your Todos
         </button>
       </div>
-      {isOpen && <Multiselect />}
+      {isOpen && <Multiselect />} */}
 
       <Todos />
     </TodosContextProvider>
